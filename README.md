@@ -1,6 +1,6 @@
 # Vital Bearing and Health OS public pages
 
-This static package contains the Vital Bearing landing page plus Health OS support and privacy pages. Vital Bearing is the website identity while Health OS remains the current app name. The site has no external scripts, analytics, trackers, cookies, forms, or third-party assets.
+This static package contains the Vital Bearing landing page plus Health OS support, privacy, FAQ, accessibility, and error pages. Vital Bearing is the website identity while Health OS remains the current app name. The site has no external scripts, analytics, trackers, cookies, forms, or third-party assets.
 
 ## Preview locally
 
@@ -18,15 +18,16 @@ Validate before deployment:
 scripts/validate-site.sh
 ```
 
-The GitHub Pages workflow is manual-only. It will not publish until a repository maintainer deliberately runs **Deploy public pages** and the repository's Pages environment is available.
+The editable source remains here. Public files are deliberately copied into the separate public repository `buffalocs/Vital-Bearing-Site`, which GitHub Pages deploys to `vitalbearing.com`. See `docs/PUBLIC_SITE_OPERATIONS.md` for the controlled publishing and rollback process.
 
 ## Before public App Store submission
 
 1. Replace the private-beta invitation wording with an owner-approved public support email or other direct contact method.
-2. Deploy the directory at a stable HTTPS origin.
-3. Put the resulting `support.html` and `privacy.html` URLs into App Store Connect.
-4. Recheck the policy against the exact shipping build and update its effective date if necessary.
+2. Enforce HTTPS after GitHub finishes issuing the custom-domain certificate.
+3. Verify all production URLs with `REQUIRE_HTTPS=1 scripts/check-public-site.sh`.
+4. Put the Support, Privacy, and Marketing URLs into App Store Connect.
+5. Recheck the policy against the exact shipping build and update its effective date if necessary.
 
 ## Domain
 
-The intended production domain is `vitalbearing.com`. DNS and hosting are configured separately from this static package.
+The production domain is `vitalbearing.com`. DNS and hosting are configured separately from this static package.

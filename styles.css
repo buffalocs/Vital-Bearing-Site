@@ -210,7 +210,19 @@ p, li { color: var(--muted); }
 .privacy-card h2 { margin-top: 8px; }
 .privacy-card .actions { flex-direction: column; align-items: flex-start; }
 
+.faq-list { display: grid; gap: 12px; margin-top: 38px; }
+.faq-list details {
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.faq-list summary { cursor: pointer; font-weight: 750; }
+.faq-list summary::marker { color: var(--green); }
+.faq-list p { margin-bottom: 0; }
+
 footer { padding: 28px 0 46px; border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem; }
+footer a { margin-inline: 2px; }
 
 @media (max-width: 620px) {
   header { padding-bottom: 20px; }
