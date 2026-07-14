@@ -196,7 +196,6 @@ p, li { color: var(--muted); }
   text-decoration: none;
 }
 .button.secondary { color: var(--green); background: var(--green-soft); }
-.beta-badge { cursor: default; }
 .text-link { align-self: center; font-weight: 750; text-decoration: none; }
 
 .privacy-card {
