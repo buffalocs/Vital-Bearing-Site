@@ -35,6 +35,9 @@ body {
 
 a { color: var(--green); }
 a:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+a, .button { transition: color .18s ease, background-color .18s ease, transform .18s ease; }
+a:hover { text-decoration-thickness: 2px; }
+.button:hover { transform: translateY(-1px); }
 
 .skip-link {
   position: absolute;
@@ -220,4 +223,23 @@ footer { padding: 28px 0 46px; border-top: 1px solid var(--border); color: var(-
   .hero { min-height: 0; }
   .bearing-card { margin-top: 8px; }
   .section-block { padding-top: 72px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root { --border: currentColor; }
+  .feature-card, .card, .bearing-card { border-width: 2px; }
+}
+
+@media print {
+  header nav, .actions { display: none; }
+  body { background: white; color: black; }
+  main { padding-top: 24px; }
+  .card, .feature-card, .bearing-card { box-shadow: none; break-inside: avoid; }
 }
